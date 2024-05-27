@@ -16,14 +16,14 @@ import androidx.compose.ui.unit.dp
 import presentation.Responsive
 
 @Composable
-fun MainContent(modifier: Modifier = Modifier, responsive: Responsive) {
+fun MainContent(modifier: Modifier = Modifier, responsive: Responsive, onMenuClick: () -> Unit) {
     Column(
         modifier = modifier
             .fillMaxSize().padding(15.dp)
             .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(15.dp)
     ) {
-        Header(modifier = Modifier.fillMaxWidth(), responsive = responsive)
+        Header(modifier = Modifier.fillMaxWidth(), responsive = responsive, onMenuClick = onMenuClick)
         Details(responsive = responsive)
     }
 }

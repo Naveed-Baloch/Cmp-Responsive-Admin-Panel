@@ -42,12 +42,12 @@ import utils.Colors
 import utils.extensions.mapIf
 
 @Composable
-fun Header(modifier: Modifier = Modifier, responsive: Responsive) {
+fun Header(modifier: Modifier = Modifier, responsive: Responsive, onMenuClick: () -> Unit) {
     Row(modifier = modifier, verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.SpaceBetween) {
         if (responsive.isDesktop) {
             Text("Dashboard", color = Color.White)
         } else {
-            Icon(Icons.Rounded.Menu,contentDescription = null, tint = Color.White, modifier = Modifier.clickable {  })
+            Icon(Icons.Rounded.Menu,contentDescription = null, tint = Color.White, modifier = Modifier.clickable { onMenuClick() })
         }
         Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
             SearchField(modifier = Modifier.height(55.dp).mapIf(responsive.isMobile) { fillMaxWidth(0.6f) }, responsive = responsive)
