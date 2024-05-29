@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredSize
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -66,7 +67,7 @@ fun MyFileView(file: MyFile, modifier: Modifier = Modifier) {
                 modifier = Modifier.requiredSize(40.dp).clip(RoundedCornerShape(10.dp)).background(file.color.copy(alpha = 0.1f)),
                 contentAlignment = Alignment.Center
             ) {
-                Image(painter = painterResource(file.svg), contentDescription = "")
+                Image(painter = painterResource(file.svg), contentDescription = "", modifier = Modifier.size(25.dp))
             }
             Icon(Icons.Default.MoreVert, tint = Color.White, contentDescription = "")
         }

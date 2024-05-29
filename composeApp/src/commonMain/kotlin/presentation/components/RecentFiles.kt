@@ -9,11 +9,13 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Divider
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -61,8 +63,8 @@ fun RecentFileUi(recentFile: RecentFile) {
         modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
-        Row(modifier = Modifier, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-            Image(painter = painterResource(recentFile.iconSvg), contentDescription = "")
+        Row(modifier = Modifier, horizontalArrangement = Arrangement.spacedBy(10.dp), verticalAlignment = Alignment.CenterVertically) {
+            Image(painter = painterResource(recentFile.iconSvg), contentDescription = "", modifier = Modifier.size(30.dp))
             Text(recentFile.title, color = Color.White, maxLines = 1)
         }
         Text(recentFile.date, color = Color.White, maxLines = 1)
