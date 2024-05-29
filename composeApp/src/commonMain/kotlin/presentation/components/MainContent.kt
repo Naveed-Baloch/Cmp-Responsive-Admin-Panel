@@ -13,7 +13,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import presentation.Responsive
+import models.Responsive
 
 @Composable
 fun MainContent(modifier: Modifier = Modifier, responsive: Responsive, onMenuClick: () -> Unit) {
@@ -41,8 +41,7 @@ fun Details(responsive: Responsive, modifier: Modifier = Modifier) {
             AddNewFilesSection(modifier = Modifier.fillMaxWidth(if (responsive.isDesktop) 0.67f else 1f))
             MyFiles(responsive = responsive, modifier = Modifier.fillMaxWidth(if (responsive.isDesktop) 0.67f else 1f))
             RecentFiles(modifier = Modifier.fillMaxWidth(if (responsive.isDesktop) 0.67f else 1f))
-
         }
-        StorageDetails(modifier = Modifier.fillMaxWidth(if(responsive.isDesktop) 0.3f else 1f))
+        StorageDetails(modifier = Modifier.fillMaxWidth(if(responsive.isDesktop) 0.32f else 1f))
     }
 }

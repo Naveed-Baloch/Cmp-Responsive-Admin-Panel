@@ -1,8 +1,6 @@
 package presentation
 
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.core.Spring
-import androidx.compose.animation.core.VisibilityThreshold
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.snap
 import androidx.compose.animation.core.spring
@@ -10,7 +8,6 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -24,9 +21,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
+import models.Responsive
 import presentation.components.MainContent
 import presentation.components.SideMenu
 import utils.Colors
@@ -40,7 +36,7 @@ fun MainScreen() {
     val isTablet by remember { derivedStateOf { deviceWidth > 600.dp && deviceWidth < 1100.dp } }
     val isDesktop by remember { derivedStateOf { deviceWidth > 1100.dp } }
     var showDrawer by remember { mutableStateOf(false) }
-    val mainContentAlpha by animateFloatAsState(if (showDrawer) 0.65f else 1f)
+    val mainContentAlpha by animateFloatAsState(if (showDrawer) 0.6f else 1f)
 
     LaunchedEffect(key1 = isDesktop) {
         if (isDesktop) {
@@ -70,16 +66,9 @@ fun MainScreen() {
         AnimatedVisibility(
             visible = showDrawer,
             enter = slideInHorizontally(animationSpec = tween()) { -it },
-            exit = slideOutHorizontally(animationSpec = if (isDesktop) snap() else spring() ) { -it }
+            exit = slideOutHorizontally(animationSpec = if (isDesktop) snap() else spring()) { -it }
         ) {
             SideMenu(modifier = Modifier.mapIf(isMobile) { width(220.dp) }, onItemClick = { showDrawer = false })
         }
     }
 }
-
-
-data class Responsive(
-    val isMobile: Boolean,
-    val isTablet: Boolean,
-    val isDesktop: Boolean,
-)

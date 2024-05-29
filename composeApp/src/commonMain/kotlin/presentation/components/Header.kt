@@ -11,9 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredSize
-import androidx.compose.foundation.layout.requiredWidth
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
@@ -36,8 +34,8 @@ import androidx.compose.ui.unit.dp
 import cmp_responsive_admin_panel.composeapp.generated.resources.Res
 import cmp_responsive_admin_panel.composeapp.generated.resources.profile_pic
 import cmp_responsive_admin_panel.composeapp.generated.resources.search
+import models.Responsive
 import org.jetbrains.compose.resources.painterResource
-import presentation.Responsive
 import utils.Colors
 import utils.extensions.mapIf
 
@@ -47,10 +45,10 @@ fun Header(modifier: Modifier = Modifier, responsive: Responsive, onMenuClick: (
         if (responsive.isDesktop) {
             Text("Dashboard", color = Color.White)
         } else {
-            Icon(Icons.Rounded.Menu,contentDescription = null, tint = Color.White, modifier = Modifier.clickable { onMenuClick() })
+            Icon(Icons.Rounded.Menu, contentDescription = null, tint = Color.White, modifier = Modifier.clickable { onMenuClick() })
         }
         Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-            SearchField(modifier = Modifier.height(55.dp).mapIf(responsive.isMobile) { fillMaxWidth(0.6f) }, responsive = responsive)
+            SearchField(modifier = Modifier.height(55.dp).mapIf(responsive.isMobile) { fillMaxWidth(0.6f) })
             ProfileSelection(modifier = Modifier.height(55.dp), responsive = responsive)
         }
     }
@@ -71,11 +69,10 @@ fun ProfileSelection(modifier: Modifier = Modifier, responsive: Responsive) {
         if (responsive.isDesktop) Text("Cmp Developer", color = Color.White, maxLines = 1, overflow = TextOverflow.Ellipsis)
         Icon(imageVector = Icons.Default.ArrowDropDown, contentDescription = "", tint = Color.White, modifier = Modifier.size(30.dp))
     }
-
 }
 
 @Composable
-private fun SearchField(modifier: Modifier = Modifier, responsive: Responsive) {
+private fun SearchField(modifier: Modifier = Modifier) {
     var query by remember { mutableStateOf("") }
     TextField(
         value = query,
@@ -92,12 +89,8 @@ private fun SearchField(modifier: Modifier = Modifier, responsive: Responsive) {
         placeholder = { Text("Search", color = Color.White) },
         singleLine = true,
         colors = TextFieldDefaults.outlinedTextFieldColors(
-            textColor = Colors.white50,
-            backgroundColor = Colors.secondaryColor,
-            cursorColor = Colors.white50,
-            focusedBorderColor = Colors.secondaryColor,
-            unfocusedBorderColor = Colors.secondaryColor,
-            disabledBorderColor = Colors.secondaryColor,
-        ),
+            textColor = Colors.white50, backgroundColor = Colors.secondaryColor, cursorColor = Colors.white50,
+            focusedBorderColor = Colors.secondaryColor, unfocusedBorderColor = Colors.secondaryColor, disabledBorderColor = Colors.secondaryColor,
+        )
     )
 }
