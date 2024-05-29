@@ -2,7 +2,7 @@
 This is a Responsive Admin Dashboard targeting Android, iOS, Web, Desktop.
 ## 🌐 Checkout live demo on [cmp-admin-panel](https://naveed-baloch.github.io/cmp-admin-panel)
 
-### 📹 Video Demo
+### 📹 Responsive Test
 <img align="Center" alt="GIF" src="https://github.com/Naveed-Baloch/Cmp-Responsive-Admin-Panel/assets/83871075/f61af4fb-0efa-4867-b20d-d87771394459"/>
 
 ### 📸 Screenshots
