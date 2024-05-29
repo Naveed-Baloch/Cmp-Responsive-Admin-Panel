@@ -1,22 +1,19 @@
-This is a Kotlin Multiplatform project targeting Android, iOS, Web, Desktop.
+# CMP Responsive Admin Dashboard 🚀
+This is a Responsive Admin Dashboard targeting Android, iOS, Web, Desktop.
+## 🌐 Checkout live demo on [cmp-admin-panel](https://naveed-baloch.github.io/cmp-admin-panel)
 
-* `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - `commonMain` is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    `iosMain` would be the right folder for such calls.
+### 📹 Video Demo
+<img align="Center" alt="GIF" src="https://github.com/Naveed-Baloch/Cmp-Responsive-Admin-Panel/assets/83871075/f61af4fb-0efa-4867-b20d-d87771394459"/>
 
-* `/iosApp` contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform, 
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+### 📸 Screenshots
+| Web  | Desktop |
+| :-: | :-:|
+| <img src="https://github.com/Naveed-Baloch/Cmp-Responsive-Admin-Panel/assets/83871075/6d3360c7-02ce-4e90-8d43-65fbf7409399" width="400"/> | <img src="https://github.com/Naveed-Baloch/Cmp-Responsive-Admin-Panel/assets/83871075/a656e7b5-e082-45e3-b192-d126f71eb38b" width="400" /> |
+
+| IOS  | Android |
+| :-: | :-:|
+| <img src="https://github.com/Naveed-Baloch/Cmp-Responsive-Admin-Panel/assets/83871075/9d9d2408-d4ba-4216-9e47-45856eaad499" width="400"/> | <img src="https://github.com/Naveed-Baloch/Cmp-Responsive-Admin-Panel/assets/83871075/d984d47c-483a-46f6-9f50-a53691c2ec61" width="400" /> |
 
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html),
-[Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform/#compose-multiplatform),
-[Kotlin/Wasm](https://kotl.in/wasm/)…
-
-**Note:** Compose/Web is Experimental and may be changed at any time. Use it only for evaluation purposes.
-We would appreciate your feedback on Compose/Web and Kotlin/Wasm in the public Slack channel [#compose-web](https://slack-chats.kotlinlang.org/c/compose-web).
-If you face any issues, please report them on [GitHub](https://github.com/JetBrains/compose-multiplatform/issues).
-
-You can open the web application by running the `:composeApp:wasmJsBrowserDevelopmentRun` Gradle task.
+Inspired by the [Flutter-Responsive-Admin-Panel-or-Dashboard](https://github.com/abuanwar072/Flutter-Responsive-Admin-Panel-or-Dashboard)
+<Br> ⭐ Star the Repo if you find this helpful!  
