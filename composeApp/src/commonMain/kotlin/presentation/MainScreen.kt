@@ -55,7 +55,7 @@ fun MainScreen() {
         }
         Row {
             if (isDesktop) {
-                SideMenu(onItemClick = { showDrawer = false })
+                SideMenu(onItemClick = { showDrawer = false }, responsive = responsive)
             }
             MainContent(
                 modifier = Modifier.fillMaxSize().alpha(mainContentAlpha).clickableWithoutRipple { showDrawer = false },
@@ -68,7 +68,7 @@ fun MainScreen() {
             enter = slideInHorizontally(animationSpec = tween()) { -it },
             exit = slideOutHorizontally(animationSpec = if (isDesktop) snap() else spring()) { -it }
         ) {
-            SideMenu(modifier = Modifier.mapIf(isMobile) { width(220.dp) }, onItemClick = { showDrawer = false })
+            SideMenu(modifier = Modifier.mapIf(isMobile) { width(220.dp) }, onItemClick = { showDrawer = false }, responsive = responsive)
         }
     }
 }
